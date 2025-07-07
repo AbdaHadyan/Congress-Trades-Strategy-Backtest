@@ -3,7 +3,7 @@
 # Task List
 
 Accessing Data:
-- [ ] Scrape data from capitol trades
+- [x] Scrape data from capitol trades
 - [ ] Clean data - estimate value of trades
 
 Analysis and Calculation:
@@ -22,3 +22,14 @@ Write up
 - [ ] Assumption & Methodology
 - [ ] Results
 - [ ] Conclusion
+
+
+
+# Assumptions
+- Insider trading occurs, therefore, the stimulant of price changes will occur soon after the traded date. Therefore, the closing position occurs a set period after the traded date. (1M, 3M, 6M)
+- Start with an initial wallet of 100K USD
+- Performance of the portfolio is representative of years beyond the 3 year period.
+
+# Methodology
+- Catagorize each trade based on estimated size. 
+- Categories for trade determine the proportion of current wealth to be invested in that position -> value for size to be discussed later. (Categories are as follows: 1K-15K, 15k-50k, 50k-100k...)
