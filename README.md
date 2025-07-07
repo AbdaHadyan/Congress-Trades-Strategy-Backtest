@@ -4,19 +4,20 @@
 
 Accessing Data:
 - [x] Scrape data from capitol trades
-- [ ] Clean data - estimate value of trades
+- [x] Store Data
+- [ ] Clean data
 
 Analysis and Calculation:
-- [ ] Find weighting of each stock per day
-- [ ] Store data on trade type and size based on weighting
+- [ ] Simulate Trades
+
 - [ ] Find value of each trade for fixed intervals
 - [ ] Find the return after the 3 year period
 - [ ] Test to assess the significance of the difference
 - [ ] Other performance metrics i.e. sharp ratio
 
 Data Visualisation:
-- [ ] Bar Charts - Politicians with the greatest volume of trades, Stock with the greatest volume of trades
-- [ ] Line Graph - Comparison of change in portfolio value over time
+- [ ] Bar Charts - Performance of individual trades and overall trading strategies (i.e different time frames, risk aversion, short-selling)
+- [ ] Line Graph - Comparison of change in portfolios value over time
 
 Write up
 - [ ] Assumption & Methodology
