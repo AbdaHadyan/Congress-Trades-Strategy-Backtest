@@ -4,7 +4,8 @@ import pandas as pd
 
 df = pd.read_csv("All_Trade_Data.csv")
 
-df["Ticker"] = df["Ticker"].str.split(":").str[0].replace("/" , "-")
+df["Ticker"] = df["Ticker"].str.split(":").str[0]
+df["Ticker"] = df["Ticker"].str.replace("/" , "-")
 
 df["Published"] = df["Published"].str.replace("Sept","Sep")
 df["Published"] = df["Published"].replace(".*Today.*", datetime.now().strftime("%d %b%Y"), regex=True)
