@@ -5,7 +5,7 @@
 Accessing Data:
 - [x] Scrape data from capitol trades
 - [x] Store Data
-- [ ] Clean data
+- [x] Clean data
 
 Analysis and Calculation:
 - [ ] Simulate Trades
