@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 # data fetching
 
 all_trade_data = [['Party', 'Politician','Ticker', 'Traded Issuer', 'Published', 'Traded', 'Filed After', 'Owner', 'Type', 'Size', 'Price', ''] ]
-headers = ['Party', 'Politician','Ticker', 'Traded Issuer', 'Published', 'Traded', 'Filed After', 'Type', 'Size', 'Price', ''] 
+
 
 page = 1
 while True:
@@ -24,9 +24,12 @@ while True:
         cells = row.find_all("td")
         if not cells:
             continue
-        span_texts = [cell.find("span").text.strip() if cell.find("span") else "" for cell in cells]
-        link_texts = [cell.find("a").text.strip() if cell.find("a") else "" for cell in cells]
-        div_texts = [cell.find("div").text.strip() if cell.find("div") else "" for cell in cells]
+        span_texts = [cell.find("span").get_text(strip=True) if cell.find("span") else None for cell in cells]
+        link_texts = [cell.find("a").get_text(strip=True) if cell.find("a") else None for cell in cells]
+        div_texts = [cell.find("div").get_text(strip=True) if cell.find("div") else None for cell in cells]
+        
+        if not (span_texts[0] and link_texts[0] and div_texts[0]): # Stops loop if page empty
+            break
 
         data = [span_texts[0]] + [link_texts[0]] + [span_texts[1]] + [link_texts[1]] + div_texts[2:]
         if len(data) == 12: # Filters bad rows
@@ -43,5 +46,6 @@ df = pd.DataFrame(all_trade_data)
 
 df.columns = df.iloc[0] # creates header
 df = df[1:].drop(columns='') # removes unused column
-print(df)
+
 df.to_csv("All_Trade_Data.csv",index=False)
+print(df)
